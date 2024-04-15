@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LocalRepository } from 'src/app/core/storage/local.repository';
-import { groupModel } from 'src/app/models/group.model';
 import { States } from 'src/app/models/states.model';
 import { Task } from 'src/app/models/task.model';
 import { DataService } from 'src/app/services/data-service/data.service';
@@ -14,7 +13,6 @@ import { DataService } from 'src/app/services/data-service/data.service';
 })
 export class AddTaskComponent implements OnInit {
   
-  public groups: Array<groupModel> = new Array<groupModel>()
   public task: Task = new Task();
   public states: States[] = [] 
   newTaskForm!: FormGroup

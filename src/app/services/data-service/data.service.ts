@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { LocalRepository } from 'src/app/core/storage/local.repository';
-import { ItemModel } from 'src/app/models/item.model';
 import { Task } from 'src/app/models/task.model';
 import { EventService } from '../event-service/event.service';
 
