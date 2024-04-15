@@ -27,26 +27,4 @@ export class DataService {
     await this.localRepository.setUnSecure('data', data)
     this.eventService.emit()
   }
-
-  public async setMarkedItemToList(item: ItemModel, data: Array<Task>) {
-    // if (data.length > 0) {
-    //   const groupFind: Array<Task> = data.filter(element => (element.group === item.group))
-    //   if (groupFind.length === 1) {
-    //     const itemsFind: Array<ItemModel> = groupFind[0].items.filter(element => (element.name === item.name))
-    //     if (itemsFind.length === 1) {
-    //       itemsFind[0] = item
-    //     }
-    //   }
-    // }
-    // await this.localRepository.setUnSecure('data', data)
-    // this.eventService.emit()
-  }
-
-  public async deleteAllGroupToList(group: string, data: Array<Task>) {
-    // if (data.length > 0) {
-    //   data = data.filter(element => (element.group !== group))
-    // }
-    await this.localRepository.setUnSecure('data', data)
-    this.eventService.emit()
-  }
 }
