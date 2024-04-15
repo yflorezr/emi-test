@@ -1,0 +1,32 @@
+<p>Add New Item</p>
+<form (ngSubmit)="addNewItem()" #taskForm="ngForm">
+    <div class="form-group mt-2">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title" required>
+    </div>
+    <div class="form-group mt-2">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description" required></textarea>
+    </div>
+    <div class="form-group mt-2">
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate" name="dueDate" class="form-control" [(ngModel)]="task.dueDate" required>
+    </div>
+    <div class="form-group mt-2">
+      <label for="notes">Status</label>
+      <select class="form-control" name="state" [(ngModel)]="task.state" required>
+        <option *ngFor="let state of states">{{state.name}}</option>
+      </select>
+    </div>
+    <div class="form-group mt-2">
+        <label for="notes">Notes</label>
+        <div *ngFor="let note of task.notes; let i=index" class="note-group">
+          <input type="text" id="note{{i}}" name="note{{i}}" class="form-control" [(ngModel)]="task.notes[i]" required>
+        </div>
+    </div>
+    <div class="form-group mt-2">
+        <label for="completed">Completed</label>
+        <input type="checkbox" id="completed" name="completed" class="form-check-input" [(ngModel)]="task.completed">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!taskForm.valid">Submit</button>
+</form>
